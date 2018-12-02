@@ -14,7 +14,7 @@ const params = {
         clipboard: true
     }
 };
-const expected = /^export enum Test/;
+const expected = /^export enum Test/i;
 
 describe('vamtiger-generate-typescript-enum: should generate an enum', function () {
     describe('from folder content', function () {

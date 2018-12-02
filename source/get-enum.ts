@@ -1,4 +1,4 @@
-import { camelCase, startCase } from 'lodash';
+import { camelCase } from 'lodash';
 import { IGetEnum, StringConstant, regex } from '.';
 
 export default function ({ enumObject, name }: IGetEnum['params']) {
