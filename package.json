@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-generate-typescript-enum",
-    "version": "0.0.8-0",
+    "version": "0.0.8",
     "description": "Generate a typescript enum for defined option(s)",
     "main": "build",
     "types": "build/index.d.ts",
