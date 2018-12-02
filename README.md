@@ -11,7 +11,15 @@ or
 yarn add global vamtiger-generate-typescript-enum
 ```
 
-## Usage
+# Usage
+Enum declarations can be generated from:
+- Folder Content: Enum from files for defined relative directory path
+
+```bash
+vamtiger-generate-typescript-enum --from folderContent --directory build --clipboard
+```
+
+## Usage Options
 Customiseable options can be listed:
 ```bash
 vamtiger-generate-typescript-enum --help
