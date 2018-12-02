@@ -9,7 +9,7 @@ export default function ({ enumObject, name }: IGetEnum['params']) {
         .map(key => `    ${camelCase(key).replace(spaces, '')} = '${enumObject[key]}'`)
         .join(`${comma}${newline}`);
     const enumDeclaration =  [
-        `export enum ${startCase(name).replace(spaces, '')} {`,
+        `export enum ${name.replace(spaces, '')} {`,
         enumBody,
         `}`
     ].join(newline);
