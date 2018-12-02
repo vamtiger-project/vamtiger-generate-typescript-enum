@@ -1,0 +1,57 @@
+{
+    "name": "vamtiger-generate-typescript-enum",
+    "version": "0.0.1",
+    "description": "Generate a typescript enum for defined option(s)",
+    "main": "build",
+    "types": "build/index.d.ts",
+    "bin": {
+        "vamtiger-generate-typescript-enum": "build/index.js"
+    },
+    "scripts": {
+        "help": "node build/bin --help",
+        "test": "npm run build && npm run mocha",
+        "mocha": "mocha build/test --recursive --timeout 10000",
+        "clean": "vamtiger-remove -d build",
+        "clean-bundle": "vamtiger-remove -d build -p \"((index)\\.(js(\\.map)?|d\\.ts))|(generate-enum-from)\\.d\\.ts\"",
+        "build": "npm run clean && tsc",
+        "build-bin": "tsc --project tsconfig-bin.json",
+        "test-build": "tsc",
+        "build-types": "npm run clean && tsc --project tsconfig-declaration.json",
+        "test-build-types": "tsc --project tsconfig-declaration.json",
+        "commit": "npm run bundle && vamtiger-node-typescript-commit --push --publish --buildScript bundle",
+        "bundle": "npm test && npm run clean; npm run build && npm run bundle-source && npm run clean-bundle",
+        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/index.ts --bundleFilePath build/index.js --format cjs --sourcemap true --copySourceMap --minify --bin",
+        "test-bundle": "npm run test-build && npm run test-build-types && npm run bundle-source",
+        "watch": "npm run clean && npm run build-types && npm run bundle-source -- --watch",
+        "test-watch": "npm run test-build && npm run test-build-types && npm run bundle-source -- --watch"
+    },
+    "keywords": [
+        "vamtiger",
+        "generate",
+        "typescript",
+        "enum"
+    ],
+    "author": "Vamtiger Immortalles",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/clipboardy": "^1.1.0",
+        "@types/lodash": "^4.14.118",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.10",
+        "chai": "^4.2.0",
+        "mocha": "^5.2.0",
+        "typescript": "^3.1.6",
+        "vamtiger-bundle-typescript": "latest",
+        "vamtiger-node-typescript-commit": "latest"
+    },
+    "dependencies": {
+        "clipboardy": "^1.2.3",
+        "lodash": "^4.17.11",
+        "remove": "^0.1.5",
+        "vamtiger-commandline-help": "0.0.4",
+        "vamtiger-create-file": "latest",
+        "vamtiger-get-directory-content-recursive": "0.0.15",
+        "vamtiger-remove": "latest"
+    }
+}
