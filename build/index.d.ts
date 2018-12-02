@@ -17,6 +17,7 @@ export declare enum ErrorMessage {
 export declare enum CommandlineArg {
     from = "from",
     help = "help",
+    name = "name",
     clipboard = "clipboard",
     directory = "directory"
 }
@@ -49,11 +50,13 @@ export interface ISaveEnum {
 export declare const ShortCommandlineArgs: {
     [CommandlineArg.from]: string;
     [CommandlineArg.help]: string;
+    [CommandlineArg.name]: string;
     [CommandlineArg.clipboard]: string;
     [CommandlineArg.directory]: string;
 };
 export declare const CommandlineDescription: {
     [CommandlineArg.from]: string;
+    [CommandlineArg.name]: string;
     [CommandlineArg.clipboard]: string;
     [CommandlineArg.directory]: string;
     [CommandlineArg.help]: string;
