@@ -27,6 +27,7 @@ vamtiger-generate-typescript-enum --help
 | Argument | Short | Description |
 |----------|-------|-------------|
 | --from | -f | Generate enum from (see From Options) |
+| --name | -n | Name of the enum declaration |
 | --clipboard | -c | copy enum to clipboard |
 | --directory | -d | Path for enum from folder content |
 | --help | -h | List help options |
